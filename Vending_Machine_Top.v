@@ -8,22 +8,22 @@ module Vending_Machine_Top(
     output [3:0] leds,      // LSB = 15c product
     output [3:0] an,
     output [6:0] ca
-    ,output clk_en,
+//    ,output clk_en,
 //    output [3:0] w_dig1,
 //    output [3:0] w_dig2,
 //    output [3:0] w_dig3,
 //    output [3:0] w_dig4,
-    output [7:0] left_disp, right_disp
-    ,output [3:0] w_pres,
-    output [3:0] w_next
+//    output [7:0] left_disp, right_disp
+//    ,output [3:0] w_pres,
+//    output [3:0] w_next
     );
     
-//    wire clk_en;
-//    wire [7:0] left_disp, right_disp;
+    wire clk_en;
+    wire [7:0] left_disp, right_disp;
     
-    Clock_Enable #(.src_freq(100000000), .target_freq(1000)) clk_1Hz (.clk(clk),
-                                                                   .clr(clr[1] | clr[0]),
-                                                                   .clk_en(clk_en) );
+    Clock_Enable_1Hz clk_en (.clk(clk),
+                             .clr(clr[1] | clr[0]),
+                             .clk_en(clk_en));
                                                                    
     Vending_Machine_Controller vend_control(.sw(sw),
                                             .btn(btn),
