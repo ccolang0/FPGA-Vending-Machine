@@ -15,11 +15,9 @@ module Vending_Machine (
     parameter c0 = 8'h36, c5 = 8'h37, c10 = 8'h38, c15 = 8'h39, c20 = 8'h40; 
     parameter p15 = 4'b0001, p20 = 4'b0010, p25 = 4'b0100, p30 = 4'b1000; 
     
-    reg [7:0] coin_amt; 
     reg [7:0] state = e0; 
     reg [7:0] amount; 
     reg [7:0] price; 
-    reg [7:0] change; 
     
     always @(price or coin) begin 
         case (state) 

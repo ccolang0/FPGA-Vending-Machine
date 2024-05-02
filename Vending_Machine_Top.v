@@ -8,14 +8,6 @@ module Vending_Machine_Top(
     output [3:0] leds,      // LSB = 15c product
     output [3:0] an,
     output [6:0] ca
-//    ,output clk_en
-//    output [3:0] w_dig1,
-//    output [3:0] w_dig2,
-//    output [3:0] w_dig3,
-//    output [3:0] w_dig4,
-//    ,output [7:0] left_disp, right_disp
-//    ,output [3:0] w_pres,
-//    output [3:0] w_next
     );
     
     wire clk_en;
