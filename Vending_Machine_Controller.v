@@ -7,12 +7,12 @@ module Vending_Machine_Controller(
     output reg [7:0] left_disp,
     output reg [7:0] right_disp,
     output reg [3:0] leds
-    ,output reg [3:0] pres,
-    output reg [3:0] next
+//    ,output reg [3:0] pres,
+//    output reg [3:0] next
     );
     
     reg [2:0] btn_d, sw_d;
-//    reg [3:0] pres, next;
+    reg [3:0] pres, next;
     
     parameter A00 = 4'b0000, A05 = 4'b0001, A10 = 4'b0010, A15 = 4'b0011,
               A20 = 4'b0100, A25 = 4'b0101, A30 = 4'b0110, A35 = 4'b0111,
@@ -105,7 +105,7 @@ module Vending_Machine_Controller(
     always @(posedge clr or posedge clk) begin
         if (clr == 1) begin
             pres <= A00;
-            next <= A00;
+            //next <= A00;
         end
         else begin                                  // else, clk cycle
             pres <= next;                               // case 2: regular clk
