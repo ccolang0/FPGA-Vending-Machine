@@ -112,8 +112,16 @@ module Vending_Machine (
                     amount <= c20; 
                 else
                     amount <= e35; 
-            c0, c5, c10, c15, c20: 
+            c0:
                 amount <= e0; 
+            c5: 
+                amount <= e5; 
+            c10: 
+                amount <= e10; 
+            c15: 
+                amount <= e15; 
+            c20: 
+                amount <= e20; 
             default: 
                 amount <= e0; 
         endcase 
@@ -144,23 +152,23 @@ module Vending_Machine (
         case (state) 
             c0: begin 
                 left_display <= e0; 
-                right_display <= e0; 
+                right_display <= price; 
                 item_dispense <= item; 
             end c5: begin 
-                left_display <= e0; 
-                right_display <= e5; 
+                left_display <= e5; 
+                right_display <= price; 
                 item_dispense <= item; 
             end c10: begin 
-                left_display <= e0; 
-                right_display <= e10; 
+                left_display <= e10; 
+                right_display <= price; 
                 item_dispense <= item; 
             end c15: begin 
-                left_display <= e0; 
-                right_display <= e15; 
+                left_display <= e15; 
+                right_display <= price; 
                 item_dispense <= item; 
             end c20: begin 
-                left_display <= e0; 
-                right_display <= e20; 
+                left_display <= e20; 
+                right_display <= price; 
                 item_dispense <= item; 
             end default: begin 
                 left_display <= state; 
